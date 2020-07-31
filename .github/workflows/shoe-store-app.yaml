@@ -17,7 +17,7 @@ jobs:
       - name: install yarn
         run: sudo apt update && sudo apt install yarn
       - name: instaling dependencies
-        run: yarn --cwd /shoe-store-app install
+        run: yarn --cwd ./shoe-store-app install
       - name: Build React App
         run: yarn build
       - name: Install Surge
