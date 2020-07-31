@@ -20,8 +20,8 @@ jobs:
         run: sudo apt update && sudo apt install yarn
       - name: instaling dependencies
         run: yarn --cwd ./covid-19-tracker-app install
-      - name: Build React App
-        run: yarn build
+      - name: Build Covid 19 Tracker App
+        run: yarn --cwd ./covid-19-tracker-app build
       - name: Install Surge
         run: npm install -g surge
       - name: Run surge
