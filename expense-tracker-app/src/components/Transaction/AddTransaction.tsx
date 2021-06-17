@@ -8,7 +8,7 @@ const AddTransaction: React.FC = () => {
   const [amount, setAmount] = useState(0);
   const { dispatch } = useContext(GlobalContext);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const newTransaction: TransactionType = {
@@ -18,6 +18,21 @@ const AddTransaction: React.FC = () => {
     };
 
     dispatch({ type: "ADD_TRANSACTION", payload: newTransaction });
+
+    fetch("http://localhost:8000/send-notification", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        title: text,
+        tokens: [localStorage.getItem("firebaseToken")],
+        body:
+          Math.sign(amount) === 1
+            ? "Income has beed added!"
+            : "Expense has been added!",
+      }),
+    });
   };
 
   return (
