@@ -38,16 +38,16 @@ const App = () => {
 
   React.useEffect(() => {
     addTokenToDB();
-  }, [addTokenToDB]);
 
-  onMessageListener()
-    .then((payload) => {
-      const { title, body } = payload.data;
-      toast.info(`${title}: ${body}`);
-    })
-    .catch((err) => {
-      console.log(JSON.stringify(err));
-    });
+    onMessageListener()
+      .then((payload) => {
+        const { title, body } = payload.data;
+        toast.info(`${title}: ${body}`);
+      })
+      .catch((err) => {
+        console.log(JSON.stringify(err));
+      });
+  }, [addTokenToDB]);
 
   return (
     <GlobalProvider>

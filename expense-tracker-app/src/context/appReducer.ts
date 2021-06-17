@@ -1,5 +1,6 @@
 import { TransactionActions, State } from "../types";
 
+// eslint-disable-next-line
 export default (state: State, action: TransactionActions) => {
   switch (action.type) {
     case "DELETE_TRANSACTION":
