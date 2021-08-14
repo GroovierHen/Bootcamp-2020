@@ -1,4 +1,4 @@
-name: Deploy Website
+name: Deploy
 
 on: [push]
 
@@ -19,6 +19,14 @@ jobs:
       - name: instaling dependencies
         run: yarn --cwd ./expense-tracker-app install
       - name: Build Expense Tracker App
+        env:
+          REACT_APP_FIREBASE_API_KEY: ${{ secrets.APIKEY }}
+          REACT_APP_FIREBASE_AUTH_DOMAIN: ${{ secrets.AUTHDOMAIN }}
+          REACT_APP_FIREBASE_PROJECT_ID: ${{ secrets.PROJECTID }}
+          REACT_APP_FIREBASE_STORAGE_BUCKET: ${{ secrets.STORAGEBUCKET }}
+          REACT_APP_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.MESSAGINGSENDERID }}
+          REACT_APP_FIREBASE_APP_ID: ${{ secrets.APPID }}
+          REACT_APP_DATABASE_URL: ${{ secrets.DATABASEURL }}
         run: yarn --cwd ./expense-tracker-app build
       - name: Install Surge
         run: npm install -g surge

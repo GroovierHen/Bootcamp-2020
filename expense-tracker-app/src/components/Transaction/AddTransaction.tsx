@@ -1,10 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext } from 'react';
 
-import { GlobalContext } from "../../context/GlobalState";
-import { TransactionType } from "../../types";
+import { GlobalContext } from '../../context/GlobalState';
+import { TransactionType } from '../../types';
 
 const AddTransaction: React.FC = () => {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
   const [amount, setAmount] = useState(0);
   const { dispatch } = useContext(GlobalContext);
 
@@ -17,22 +17,7 @@ const AddTransaction: React.FC = () => {
       text,
     };
 
-    dispatch({ type: "ADD_TRANSACTION", payload: newTransaction });
-
-    fetch("http://localhost:8000/send-notification", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        title: text,
-        tokens: [localStorage.getItem("firebaseToken")],
-        body:
-          Math.sign(amount) === 1
-            ? "Income has beed added!"
-            : "Expense has been added!",
-      }),
-    });
+    dispatch({ type: 'ADD_TRANSACTION', payload: newTransaction });
   };
 
   return (
