@@ -1,11 +1,12 @@
-name: Deploy
+name: Expense-Tracker
 
 on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
     name: Deploying to surge
+    runs-on: ubuntu-latest
+    environment: firebase
     steps:
       - uses: actions/checkout@v2
       - name: Install Node.js

@@ -1,11 +1,11 @@
-name: Deploy
+name: Shoe-Store
 
 on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
     name: Deploying to surge
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install Node.js
