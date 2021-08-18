@@ -14,6 +14,10 @@ Here are all the links of Bootcamp 2020 projects.
 
 - [Shoe Store](https://www.bootcamp-2020_shoe_store_app.surge.sh) ![Workflow Status](https://img.shields.io/github/workflow/status/GroovierHen/Bootcamp-2020/Shoe-Store?label=Build&logo=Github)
 
+## Project 4A
+
+-- [Red Queen's Race](https://codesandbox.io/s/red-queens-race-418nd)
+
 ## Project 6
 
 - [Quiz App](https://www.bootcamp-2020_quiz_app.surge.sh) ![Workflow Status](https://img.shields.io/github/workflow/status/GroovierHen/Bootcamp-2020/Quiz?label=Build&logo=Github)
@@ -21,4 +25,8 @@ Here are all the links of Bootcamp 2020 projects.
 ## Project 7A
 
 - [Expense Tracker App PWA](https://www.bootcamp-2020_expense_tracker_app.surge.sh) ![Workflow Status](https://img.shields.io/github/workflow/status/GroovierHen/Bootcamp-2020/Expense-Tracker?label=Build&logo=Github)
-- [Quiz App PWA](https://www.bootcamp-2020_quiz_app.surge.sh)
+- [Quiz App PWA](https://www.bootcamp-2020_quiz_app.surge.sh) ![Workflow Status](https://img.shields.io/github/workflow/status/GroovierHen/Bootcamp-2020/Quiz?label=Build&logo=Github)
+
+## Project 7B
+
+- [React Timer](https://bootcamp-2020_react_timer.surge.sh/) ![Workflow Status](https://img.shields.io/github/workflow/status/GroovierHen/Bootcamp-2020/React-Timer?label=Build&logo=Github)

@@ -6,7 +6,7 @@
 
 ## Introduction
 
-This is a code repository for the Bootcamp 2020 Project 1.
+This is a code repository for the Bootcamp 2020 Project 2.
 
 I have use React, TypeScript, Charts.JS and Material UI.
 
