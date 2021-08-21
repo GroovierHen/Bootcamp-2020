@@ -18,7 +18,7 @@ jobs:
         run: sudo apt update && sudo apt install yarn
       - name: instaling dependencies
         run: yarn --cwd ./space-x-app install
-      - name: Build React Timer
+      - name: Build Space X app
         run: yarn --cwd ./space-x-app build
       - name: Install Surge
         run: npm install -g surge
