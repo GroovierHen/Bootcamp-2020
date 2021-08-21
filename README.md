@@ -33,4 +33,4 @@ Here are all the links of Bootcamp 2020 projects.
 
 ## Project 8
 
-- [React Timer](http://bootcamp-2020_space_x_app.surge.sh/) ![Workflow Status](https://img.shields.io/github/workflow/status/GroovierHen/Bootcamp-2020/SpaceX?label=Build&logo=Github)
+- [SpaceX](http://bootcamp-2020_space_x_app.surge.sh/) ![Workflow Status](https://img.shields.io/github/workflow/status/GroovierHen/Bootcamp-2020/SpaceX?label=Build&logo=Github)
