@@ -2,8 +2,7 @@ name: Blog-App-Deploy-to-Netlify
 
 on:
   push:
-    branches:
-      - main
+    branches: [master]
   repository_dispatch:
     types: [contentful-event]
 
