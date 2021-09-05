@@ -7,6 +7,8 @@ module.exports = {
         siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     },
     plugins: [
+        `gatsby-plugin-sharp`,
+        `gatsby-plugin-image`,
         `gatsby-transformer-remark`,
         `gatsby-plugin-react-helmet`,
         {
