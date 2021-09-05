@@ -53,4 +53,4 @@ Here are all the links of Bootcamp 2020 projects.
 
 ## Project 12A
 
-- [Blog](https://bootcamp-2020-blog.netlify.app) [![Netlify Status](https://api.netlify.com/api/v1/badges/25f99a18-2fd1-4f00-9178-13b9e491cfe6/deploy-status)](https://app.netlify.com/sites/bootcamp-2020-blog/deploys)
+- [Blog](https://bootcamp-2020-blog.netlify.app) ![Workflow Status](https://img.shields.io/github/workflow/status/GroovierHen/Bootcamp-2020/Blog App Deploy to Netlify?label=Build&logo=Github)

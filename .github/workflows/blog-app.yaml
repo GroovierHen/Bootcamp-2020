@@ -1,6 +1,6 @@
-name: Blog-App
+name: Blog App Deploy to Netlify
 
-on: [push]
+on: [push, repository_dispatch]
 
 jobs:
   build:
