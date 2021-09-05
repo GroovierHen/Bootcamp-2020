@@ -20,6 +20,7 @@ jobs:
       - name: instaling dependencies
         run: yarn --cwd ./expense-tracker-app install
       - name: Build Expense Tracker App
+        run: yarn --cwd ./expense-tracker-app build
         env:
           REACT_APP_FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
           REACT_APP_FIREBASE_AUTH_DOMAIN: ${{ secrets.FIREBASE_AUTH_DOMAIN }}
@@ -28,7 +29,6 @@ jobs:
           REACT_APP_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}
           REACT_APP_FIREBASE_APP_ID: ${{ secrets.FIREBASE_APP_ID }}
           REACT_APP_DATABASE_URL: ${{ secrets.FIREBASE_DATABASE_URL }}
-        run: yarn --cwd ./expense-tracker-app build
       - name: Install Surge
         run: npm install -g surge
       - name: Run surge
