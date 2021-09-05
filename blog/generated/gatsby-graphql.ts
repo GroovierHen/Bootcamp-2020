@@ -4158,5 +4158,8 @@ export type BlogPostByIdQueryVariables = Exact<{
 
 export type BlogPostByIdQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, contentfulBlogPost?: Maybe<(
     Pick<ContentfulBlogPost, 'title' | 'publishedDate'>
-    & { excerpt?: Maybe<{ childMarkdownRemark?: Maybe<Pick<MarkdownRemark, 'excerpt'>> }>, body?: Maybe<Pick<ContentfulBlogPostBody, 'raw'>> }
+    & { excerpt?: Maybe<(
+      Pick<ContentfulBlogPostExcerptTextNode, 'excerpt'>
+      & { childMarkdownRemark?: Maybe<Pick<MarkdownRemark, 'excerpt'>> }
+    )>, body?: Maybe<Pick<ContentfulBlogPostBody, 'raw'>> }
   )>, previous?: Maybe<Pick<ContentfulBlogPost, 'title' | 'slug'>>, next?: Maybe<Pick<ContentfulBlogPost, 'title' | 'slug'>> };

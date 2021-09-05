@@ -2,7 +2,7 @@ import { initializeApp, FirebaseOptions } from 'firebase/app';
 import {
   getAuth,
   signInWithRedirect,
-  getRedirectResult,
+  signOut,
   GoogleAuthProvider,
 } from 'firebase/auth';
 
@@ -24,4 +24,4 @@ export const auth = getAuth(app);
 
 export const signInGoogle = () => signInWithRedirect(auth, provider);
 
-export const getResult = () => getRedirectResult(auth);
+export const signOutGoogle = () => signOut(auth);

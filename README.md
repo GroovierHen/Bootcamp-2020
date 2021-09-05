@@ -50,3 +50,7 @@ Here are all the links of Bootcamp 2020 projects.
 ## Project 11
 
 - [Taskbox Storybook](https://612a81d5410daf003aa22c63-lywhjejiyl.chromatic.com/)
+
+## Project 12A
+
+- [Blog](https://bootcamp-2020-blog.netlify.app) [![Netlify Status](https://api.netlify.com/api/v1/badges/25f99a18-2fd1-4f00-9178-13b9e491cfe6/deploy-status)](https://app.netlify.com/sites/bootcamp-2020-blog/deploys)

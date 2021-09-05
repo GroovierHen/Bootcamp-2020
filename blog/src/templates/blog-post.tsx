@@ -1,15 +1,19 @@
 import * as React from 'react';
 import { PageProps, Link, graphql } from 'gatsby';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-import { BlogPostBySlugQuery } from '../../generated/gatsby-graphql';
+import { BlogPostByIdQuery } from '../../generated/gatsby-graphql';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
+import { auth } from '../utils/firebase';
 
-const BlogPostTemplate: React.FC<PageProps<BlogPostBySlugQuery>> = ({
+const BlogPostTemplate: React.FC<PageProps<BlogPostByIdQuery>> = ({
   data,
   location,
 }) => {
+  const [user] = useAuthState(auth);
+
   const post = data.contentfulBlogPost;
   const siteTitle = data.site?.siteMetadata?.title || `Title`;
   const { previous, next } = data;
@@ -31,11 +35,21 @@ const BlogPostTemplate: React.FC<PageProps<BlogPostBySlugQuery>> = ({
         </header>
 
         <section itemProp="articleBody">
-          {documentToReactComponents(JSON.parse(post?.body?.raw!))}
+          {user
+            ? documentToReactComponents(JSON.parse(post?.body?.raw!))
+            : post.excerpt.excerpt}
         </section>
 
         <hr />
       </article>
+
+      {!user && (
+        <>
+          <div className="artical-overlay" />
+          <span>Login to view</span>
+        </>
+      )}
+
       <nav className="blog-post-nav">
         <ul
           style={{
@@ -83,6 +97,7 @@ export const pageQuery = graphql`
       title
       publishedDate(formatString: "Do MMMM, YYYY")
       excerpt {
+        excerpt
         childMarkdownRemark {
           excerpt
         }
