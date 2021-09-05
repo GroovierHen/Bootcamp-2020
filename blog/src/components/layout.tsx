@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { PageProps, Link, withPrefix } from 'gatsby';
-import { useAuthState } from 'react-firebase-hooks/auth';
 
-import { signInGoogle, signOutGoogle, auth } from '../utils/firebase';
+import { FirebaseContext } from '../utils/Enhancer';
 
 type Props = {
   title: string;
 } & Pick<PageProps, 'location'>;
 
 const Layout: React.FC<Props> = ({ location, title, children }) => {
-  const [user] = useAuthState(auth);
+  const firebase = React.useContext(FirebaseContext);
 
   const isRootPath = location.pathname === withPrefix('/');
   let header: React.ReactNode;
@@ -32,15 +31,18 @@ const Layout: React.FC<Props> = ({ location, title, children }) => {
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <header className="global-header">
         {header}
-        {user ? (
+        {firebase?.user ? (
           <h6>
-            {user.displayName}{' '}
-            <span onClick={signOutGoogle} style={{ cursor: 'pointer' }}>
+            {firebase?.user.displayName}{' '}
+            <span
+              onClick={firebase?.signOutGoogle}
+              style={{ cursor: 'pointer' }}
+            >
               logout
             </span>
           </h6>
         ) : (
-          <div className="g-sign-in-button" onClick={signInGoogle}>
+          <div className="g-sign-in-button" onClick={firebase?.signInGoogle}>
             <div className="content-wrapper">
               <div className="logo-wrapper">
                 <img src="https://developers.google.com/identity/images/g-logo.png" />

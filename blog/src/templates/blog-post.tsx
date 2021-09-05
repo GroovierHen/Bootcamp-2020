@@ -1,18 +1,17 @@
 import * as React from 'react';
 import { PageProps, Link, graphql } from 'gatsby';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import { BlogPostByIdQuery } from '../../generated/gatsby-graphql';
+import { FirebaseContext } from '../utils/Enhancer';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
-import { auth } from '../utils/firebase';
 
 const BlogPostTemplate: React.FC<PageProps<BlogPostByIdQuery>> = ({
   data,
   location,
 }) => {
-  const [user] = useAuthState(auth);
+  const firebase = React.useContext(FirebaseContext);
 
   const post = data.contentfulBlogPost;
   const siteTitle = data.site?.siteMetadata?.title || `Title`;
@@ -35,7 +34,7 @@ const BlogPostTemplate: React.FC<PageProps<BlogPostByIdQuery>> = ({
         </header>
 
         <section itemProp="articleBody">
-          {user
+          {firebase?.user
             ? documentToReactComponents(JSON.parse(post?.body?.raw!))
             : post.excerpt.excerpt}
         </section>
@@ -43,7 +42,7 @@ const BlogPostTemplate: React.FC<PageProps<BlogPostByIdQuery>> = ({
         <hr />
       </article>
 
-      {!user && (
+      {!firebase?.user && (
         <>
           <div className="artical-overlay" />
           <span>Login to view</span>
