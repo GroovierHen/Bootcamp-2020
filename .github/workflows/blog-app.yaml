@@ -12,7 +12,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2-beta
         with:
-          node-version: 12
+          node-version: 14
       - name: install packages and make build
         run: cd blog && npm install && npm run build
         env:
